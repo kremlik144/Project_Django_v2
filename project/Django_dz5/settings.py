@@ -31,7 +31,7 @@ CSRF_COOKIE_SECURE = True
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'SMF.pythonanywhere.com',
+    'FSMT.pythonanywhere.com',
 ]
 
 
@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'Django_dz5.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SMF$default',
-        'USER': 'SMF',
+        'NAME': 'FSMT$default',
+        'USER': 'FSMT',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': 'SMF.mysql.pythonanywhere-services.com',
+        'HOST': 'FSMT.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
             'charset': 'utf8mb4',
