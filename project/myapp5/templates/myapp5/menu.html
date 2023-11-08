@@ -1,0 +1,31 @@
+<p>
+    <div style="display: flex; gap: 20px;">
+        <form action="/lastday/{{ client_id }}/7">
+            <input type="submit"
+                {% if days == 7 %}
+                   class="btn btn-success active"
+                {% else %}
+                   class="btn btn-primary"
+                {% endif %}
+                   value="за последние 7 дней">
+        </form>
+        <form action="/lastday/{{ client_id }}/30">
+            <input type="submit"
+                {% if days == 30 %}
+                   class="btn btn-success active"
+                {% else %}
+                   class="btn btn-primary"
+                {% endif %}
+                   value="за последние 30 дней">
+        </form>
+        <form action="/lastday/{{ client_id }}/365">
+            <input type="submit"
+                {% if days == 365 %}
+                   class="btn btn-success active"
+                {% else %}
+                   class="btn btn-primary"
+                {% endif %}
+                   value="за последние 365 дней">
+        </form>
+    </div>
+</p>

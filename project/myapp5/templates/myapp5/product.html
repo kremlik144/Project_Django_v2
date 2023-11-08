@@ -1,0 +1,67 @@
+{% extends 'myapp5/base.html' %}
+
+{% block title %}
+Редактирование товара
+{% endblock %}
+
+{% block header %}
+<h1>
+Редактирование товара
+</h1>
+{% endblock %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<h6>{{ message }}</h6>
+<div class="container-fluid" style="height: 480px;">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field }}
+        {% endfor %}
+
+        <div class="row justify-content-start">
+            <div class="col-sm">
+                <div style="text-align: left;">
+                    {{ form.name.label_tag }}
+                    {% render_field form.name class="form-control" %}
+                </div>
+                <div style="text-align: left;">
+                    {{ form.description.label_tag }}
+                    {% render_field form.description class="form-control" %}
+                </div>
+                <div class="row">
+                    <div  class="col-sm" style="text-align: left;">
+                        {{ form.price.label_tag }}
+                        {% render_field form.price class="form-control" %}
+                    </div>
+                    <div  class="col-sm" style="text-align: left;">
+                        {{ form.amount.label_tag }}
+                        {% render_field form.amount class="form-control" %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                {% if form.image.value %}
+                    <div>
+                        <img class="img-thumbnail" src="/media/{{ form.image.value }}" alt="{{ form.image.value }}" style="width: 200px; height: 200px;">
+                    </div>
+                {%  endif %}
+                <div style="text-align: left;">
+                    {{ form.image.label_tag }}
+                    {% render_field form.image class="form-control" %}
+                </div>
+            </div>
+
+        </div>
+
+        <div style="display: flex; gap: 50px; justify-content: center; margin-top: 10px;">
+            <input type="submit" class="btn btn-primary" value="Сохранить">
+            <input type="reset" class="btn btn-primary" value="Очистить">
+        </div>
+    </form>
+</div>
+{% endblock %}

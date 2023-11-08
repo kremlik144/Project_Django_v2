@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../../static/myapp5/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'myapp5/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp5/css/style.css' %}">
+
+    <title>
+        {% block title %}
+        Мой сайт
+        {% endblock %}
+    </title>
+</head>
+<body class="bg-light">
+<div class="container">
+<div class="py-5 text-center">
+    <header>
+        {% block header %}
+        Главная страница
+        {% endblock %}
+    </header>
+    <main>
+        {% block content %}
+        Страница не заполнена
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="alert-dark">
+            Все права защищены &copy;
+        </div>
+    </footer>
+</div>
+</div>
+</body>
+<script src="{% static 'myapp5/js/bootstrap.bundle.min.js' %}"></script>
+</html>
